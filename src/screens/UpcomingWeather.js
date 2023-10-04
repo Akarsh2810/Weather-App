@@ -3,8 +3,6 @@ import { SafeAreaView, StyleSheet, Text, StatusBar, FlatList, ImageBackground } 
 import ListItem from "../components/ListItem";
 
 const UpcomingWeather = () => {
-    //   console.log("Hello Upcoming Weather Component");
-
     const Data = [
         {
             dt_txt: "2023-02-18 12:00:00",
