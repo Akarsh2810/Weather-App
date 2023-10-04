@@ -25,7 +25,7 @@ const App = () => {
     //   </View>
     // </SafeAreaView>
     <View style = {styles.container}>
-      <CurrentWeather />
+      {/* <CurrentWeather /> */}
       <UpcomingWeather />
     </View>
   )
