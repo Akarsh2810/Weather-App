@@ -1,10 +1,12 @@
 import React from "react";
 // import {View, Text, StyleSheet, SafeAreaView, StatusBar} from "react-native";
 // import { Feather } from '@expo/vector-icons';
+import {View, StyleSheet} from "react-native";
 import CurrentWeather from "./src/components/CurrentWeather";
+import UpcomingWeather from "./src/components/UpcomingWeather";
 
 const App = () => {
-  // console.log("Hello App");
+  // console.log("Hello App Component");
   return (
     // <SafeAreaView style={styles.wrapper}>
     //   <View style={styles.container}>
@@ -22,9 +24,18 @@ const App = () => {
     //     <Text style={styles.message}>Its perfect t-shirt weather</Text>
     //   </View>
     // </SafeAreaView>
-    <CurrentWeather />
+    <View style = {styles.container}>
+      <CurrentWeather />
+      <UpcomingWeather />
+    </View>
   )
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  }
+})
 
 // const styles = StyleSheet.create({
 //   wrapper: {

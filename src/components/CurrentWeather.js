@@ -3,7 +3,7 @@ import {View, Text, StyleSheet, SafeAreaView, StatusBar} from "react-native";
 import { Feather } from '@expo/vector-icons';
 
 const CurrentWeather = () => {
-//   console.log("Hello App");
+//   console.log("Hello Current Weather Component");
   return (
     <SafeAreaView style={styles.wrapper}>
       <View style={styles.container}>
