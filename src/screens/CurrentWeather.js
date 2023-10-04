@@ -33,7 +33,7 @@ const CurrentWeather = () => {
 const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
-    marginTop : StatusBar.currentHeight,
+    // marginTop : StatusBar.currentHeight || 0,
     backgroundColor : "pink",
   },
   container: {
