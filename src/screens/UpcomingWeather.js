@@ -71,7 +71,6 @@ const renderItem = ({item}) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        // marginTop : StatusBar.currentHeight || 0, /* 0 for IOS */
         backgroundColor: "royalblue"
     },
     image : {
