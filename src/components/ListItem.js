@@ -3,9 +3,10 @@ import {View, Text, StyleSheet} from "react-native";
 import { Feather } from "@expo/vector-icons";
 
 const ListItem = (props) => {
-    const { dt_txt, min, max, condition } = props;
 
+    const { dt_txt, min, max, condition } = props;
     const {item, date, temp} = styles;
+
     return (
         <View style = {item}>
             <Feather name={"sun"} size={50} color={"white"}/>

@@ -1,8 +1,9 @@
 import React from "react";
-import { SafeAreaView, StyleSheet, Text, StatusBar, FlatList, ImageBackground } from "react-native";
+import { SafeAreaView, StyleSheet, FlatList, ImageBackground } from "react-native";
 import ListItem from "../components/ListItem";
 
 const UpcomingWeather = () => {
+    
     const Data = [
         {
             dt_txt: "2023-02-18 12:00:00",

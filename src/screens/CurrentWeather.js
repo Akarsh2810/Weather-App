@@ -1,11 +1,13 @@
 import React from "react";
-import {View, Text, StyleSheet, SafeAreaView, StatusBar} from "react-native";
+import {View, Text, StyleSheet, SafeAreaView} from "react-native";
 import { Feather } from '@expo/vector-icons';
 import RowText from "../components/RowText";
 import { WeatherType } from "../utilities/WeatherType";
 
 const CurrentWeather = () => {
+
   const {wrapper, container, temp, feels, highLowWrapper, highLow, bodyWrapper, description, message} = styles;
+  
   return (
     <SafeAreaView style={wrapper}>
       <View style={container}>
