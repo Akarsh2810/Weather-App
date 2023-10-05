@@ -1,8 +1,9 @@
 import React from "react";
-import { StyleSheet, View, Text, SafeAreaView, StatusBar, ImageBackground } from "react-native";
+import { StyleSheet, View, Text, SafeAreaView, ImageBackground } from "react-native";
 import IconText from "../components/IconText";
 
 const City = () => {
+    
     const {wrapper, image, cityName, countryName, cityText, populationWrapper, populationText, riseSetWrapper, riseSetText, rowLayout} = styles;
 
     return (
