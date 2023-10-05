@@ -6,8 +6,8 @@ import Counter from "./src/demonstrations/Counter";
 const App = () => {
   return (
     <NavigationContainer>
-      <Counter />
-      {/* <Tabs /> */}
+      {/* <Counter /> */}
+      <Tabs />
     </NavigationContainer>
   )
 }
