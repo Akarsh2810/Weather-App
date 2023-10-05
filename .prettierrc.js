@@ -1,11 +1,11 @@
 module.exports = {
-    bracketSpacing: true,
-    singleQuote: true,
-    tabWidth: 2,
-    useTabs: false,
-    trailingComma: "none",
-    semi: false
-};
+  bracketSpacing: true,
+  singleQuote: true,
+  tabWidth: 2,
+  useTabs: false,
+  trailingComma: 'none',
+  semi: false
+}
 
 // above code (JS module code) can be replaced by below code (ES module code)
 // export const bracketSpacing = true;
