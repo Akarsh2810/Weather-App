@@ -3,8 +3,6 @@ import { SafeAreaView, StyleSheet, Text, StatusBar, FlatList, ImageBackground } 
 import ListItem from "../components/ListItem";
 
 const UpcomingWeather = () => {
-    //   console.log("Hello Upcoming Weather Component");
-
     const Data = [
         {
             dt_txt: "2023-02-18 12:00:00",
@@ -49,7 +47,6 @@ const UpcomingWeather = () => {
     return (
         <SafeAreaView style = {container}>
             <ImageBackground source = {require("../../assets/upcoming-background.jpg")} style = {image} >
-                <Text>Upcoming Weather</Text>
                 <FlatList 
                     data={Data}
                     renderItem={renderItem}
@@ -74,7 +71,6 @@ const renderItem = ({item}) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        marginTop : StatusBar.currentHeight || 0, /* 0 for IOS */
         backgroundColor: "royalblue"
     },
     image : {

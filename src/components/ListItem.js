@@ -3,8 +3,6 @@ import {View, Text, StyleSheet} from "react-native";
 import { Feather } from "@expo/vector-icons";
 
 const ListItem = (props) => {
-    //   console.log("Hello ListItem Component");
-
     const { dt_txt, min, max, condition } = props;
 
     const {item, date, temp} = styles;
