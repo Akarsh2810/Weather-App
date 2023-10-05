@@ -4,30 +4,34 @@ import { Feather } from '@expo/vector-icons';
 import RowText from "../components/RowText";
 import { WeatherType } from "../utilities/WeatherType";
 
-const CurrentWeather = () => {
+const CurrentWeather = ({weatherData}) => {
 
-  const {wrapper, container, temp, feels, highLowWrapper, highLow, bodyWrapper, description, message} = styles;
-  
+  const {wrapper, container, tempStyles, feels, highLowWrapper, highLow, bodyWrapper, description, message} = styles;
+  const {main: {temp, feels_like, temp_max, temp_min}, weather} = weatherData;
+  const weatherCondition = weather[0]?.main;
+
+  console.log(weatherData);
+
   return (
-    <SafeAreaView style={wrapper}>
+    <SafeAreaView style={[wrapper, {backgroundColor: WeatherType[weatherCondition]?.backgroundColor}]}>
       <View style={container}>
-        <Feather name="sun" size={100} color="black" />
-        <Text style={temp}>6</Text>
-        <Text style={feels}>Feels like 5</Text>
+        <Feather name={WeatherType[weatherCondition]?.icon} size={100} color="white" />
+        <Text style={tempStyles}>{`${Math.round(temp)}°C`}</Text>
+        <Text style={feels}>{`Feels like ${Math.round(feels_like)}°C`}</Text>
         <RowText 
           containerStyles = {highLowWrapper} 
           messageOneStyles = {highLow} 
           messageTwoStyles = {highLow} 
-          messageOne = {"High: 8 "} 
-          messageTwo = {"Low: 6"}
+          messageOne = {`High: ${Math.round(temp_max)}°C `} 
+          messageTwo = {`Low: ${Math.round(temp_min)}°C`}
         />
       </View>
       <RowText 
           containerStyles = {bodyWrapper} 
           messageOneStyles = {description} 
           messageTwoStyles = {message} 
-          messageOne = {"Its sunny"} 
-          messageTwo = {WeatherType["ThunderStorm"].message}
+          messageOne = {weather[0]?.description} 
+          messageTwo = {WeatherType[weatherCondition]?.message}
         />
     </SafeAreaView>
   )
@@ -36,14 +40,13 @@ const CurrentWeather = () => {
 const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
-    backgroundColor : "pink",
   },
   container: {
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
   },
-  temp: {
+  tempStyles: {
     color: "black",
     fontSize: 48
   },
@@ -66,11 +69,11 @@ const styles = StyleSheet.create({
   },
   description: {
     color: "black",
-    fontSize: 48
+    fontSize: 43
   },
   message: {
     color: "black",
-    fontSize: 30
+    fontSize: 25
   }
 })
 

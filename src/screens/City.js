@@ -1,21 +1,26 @@
 import React from "react";
 import { StyleSheet, View, Text, SafeAreaView, ImageBackground } from "react-native";
 import IconText from "../components/IconText";
+import moment from "moment";
 
-const City = () => {
+const City = ({weatherData}) => {
     
+    const {name, country, population, sunrise, sunset} = weatherData;
+
     const {wrapper, image, cityName, countryName, cityText, populationWrapper, populationText, riseSetWrapper, riseSetText, rowLayout} = styles;
+
+    console.log(weatherData);
 
     return (
         <SafeAreaView style = {wrapper}>
             <ImageBackground source={require("../../assets/city-background.jpg")} style={image}>
-                <Text style = {[cityName, cityText]}>London</Text>
-                <Text style = {[countryName, cityText]}>UK</Text>
+                <Text style = {[cityName, cityText]}>{name}</Text>
+                <Text style = {[countryName, cityText]}>{country}</Text>
                 <View style = {[populationWrapper, rowLayout]}>
                     <IconText 
                         iconName = {"user"} 
                         iconColor = {"red"} 
-                        bodyText = {"8000"} 
+                        bodyText = {`Population: ${population}`} 
                         bodyTextStyles = {populationText}
                     />
                 </View>
@@ -23,13 +28,13 @@ const City = () => {
                     <IconText 
                         iconName = {"sunrise"} 
                         iconColor = {"white"} 
-                        bodyText = {"10:46:58 AM"} 
+                        bodyText = {moment(sunrise).format("h:mm:ss A")} 
                         bodyTextStyles = {riseSetText}
                     />
                     <IconText 
                         iconName = {"sunset"} 
                         iconColor = {"white"} 
-                        bodyText = {"17:28:15 PM"} 
+                        bodyText = {moment(sunset).format("h:mm:ss A")} 
                         bodyTextStyles = {riseSetText}
                     />
                 </View>
