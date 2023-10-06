@@ -27,7 +27,7 @@ export const useGetWeather = () => {
     ;(async () => {
       let { status } = await Location.requestForegroundPermissionsAsync()
       if (status !== 'granted') {
-        setError('permission to access location was denied')
+        setError('Permission to access location was denied')
         return
       }
       let location = await Location.getCurrentPositionAsync({})

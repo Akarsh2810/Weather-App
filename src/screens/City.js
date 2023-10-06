@@ -25,8 +25,6 @@ const City = ({ weatherData }) => {
     rowLayout
   } = styles
 
-  console.log(weatherData)
-
   return (
     <SafeAreaView style={wrapper}>
       <ImageBackground
