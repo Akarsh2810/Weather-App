@@ -22,8 +22,6 @@ const CurrentWeather = ({ weatherData }) => {
   } = weatherData
   const weatherCondition = weather[0]?.main
 
-  console.log(weatherData)
-
   return (
     <SafeAreaView
       style={[

@@ -1,12 +1,14 @@
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import { Feather } from '@expo/vector-icons'
+import { useGetWeather } from '../hooks/useGetWeather'
 
 const ErrorItem = () => {
+  const [ loading, error, weather ] = useGetWeather()
   const { container, errorMessage } = styles
   return (
     <View style={container}>
-      <Text style={errorMessage}>Sorry something went wrong</Text>
+      <Text style={errorMessage}>{error}</Text>
       <Feather name={'frown'} size={100} color={'white'} />
     </View>
   )
